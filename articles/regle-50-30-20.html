@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La règle des 50/30/20 expliquée simplement | FinanceIQ</title>
+  <meta name="description" content="Découvrez la méthode de budgétisation 50/30/20 : comment diviser votre salaire pour vivre bien aujourd'hui tout en épargnant pour demain. Guide complet avec exemples.">
+  <meta name="keywords" content="règle 50 30 20, méthode budget, 50 30 20 budget, comment budgéter, gestion argent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0a0f1e; --surface:#111827; --card:#161f35;
+      --accent:#00e5a0; --accent2:#4f8eff;
+      --text:#f0f4ff; --muted:#7a8aaa; --border:rgba(255,255,255,0.07);
+      --font-head:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(10,15,30,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--accent);letter-spacing:-0.5px;text-decoration:none}
+    .logo span{color:var(--text)}
+    .nav-links{display:flex;gap:28px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--accent)}
+    @media(max-width:700px){nav{padding:16px 20px}.nav-links{display:none}}
+
+    /* ARTICLE LAYOUT */
+    .article-wrap{max-width:760px;margin:0 auto;padding:100px 20px 80px}
+
+    /* HERO ARTICLE */
+    .article-hero{margin-bottom:48px}
+    .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:20px}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb a:hover{color:var(--accent)}
+    .article-tag{display:inline-block;background:rgba(0,229,160,0.12);color:var(--accent);font-size:11px;font-weight:700;padding:5px 14px;border-radius:50px;letter-spacing:1px;margin-bottom:20px}
+    .article-title{font-family:var(--font-head);font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px}
+    .article-intro{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:24px;font-weight:300}
+    .article-meta{display:flex;gap:20px;font-size:13px;color:var(--muted);padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap}
+
+    /* HERO IMAGE SVG */
+    .article-visual{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;margin:40px 0;display:flex;justify-content:center}
+
+    /* CONTENU */
+    .article-content h2{font-family:var(--font-head);font-size:28px;font-weight:800;letter-spacing:-0.5px;margin:48px 0 16px}
+    .article-content h3{font-family:var(--font-head);font-size:20px;font-weight:700;margin:32px 0 12px;color:var(--accent)}
+    .article-content p{margin-bottom:18px;color:var(--text);font-size:16px}
+    .article-content strong{color:var(--accent);font-weight:600}
+    .article-content ul,.article-content ol{margin:16px 0 20px 24px}
+    .article-content li{margin-bottom:10px;color:var(--text)}
+
+    /* HIGHLIGHT BOX */
+    .highlight{background:rgba(0,229,160,0.07);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .highlight-title{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--accent);margin-bottom:8px}
+    .highlight p{margin-bottom:0;color:var(--muted)}
+
+    .warning{background:rgba(245,166,35,0.07);border-left:4px solid #f5a623;border-radius:0 12px 12px 0;padding:20px 24px;margin:28px 0}
+    .warning-title{font-family:var(--font-head);font-size:15px;font-weight:700;color:#f5a623;margin-bottom:8px}
+
+    /* TABLEAU */
+    .table-wrap{overflow-x:auto;margin:28px 0;border-radius:14px;border:1px solid var(--border)}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead{background:var(--surface)}
+    th{padding:14px 16px;text-align:left;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+    td{padding:14px 16px;border-top:1px solid var(--border)}
+    tr:hover td{background:rgba(255,255,255,0.02)}
+    .td-accent{color:var(--accent);font-weight:600}
+
+    /* CARD EXEMPLE */
+    .example-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin:28px 0}
+    .example-card h4{font-family:var(--font-head);font-size:17px;font-weight:700;margin-bottom:20px;color:var(--accent2)}
+    .example-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)}
+    .example-row:last-child{border-bottom:none;font-weight:700;padding-top:16px}
+    .er-label{color:var(--muted);font-size:14px}
+    .er-val{font-family:var(--font-head);font-size:16px;font-weight:700}
+
+    /* CTA OUTIL */
+    .tool-cta{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,rgba(0,229,160,0.1),rgba(79,142,255,0.08));border:1px solid rgba(0,229,160,0.25);border-radius:16px;padding:24px;margin:36px 0;text-decoration:none;color:inherit;transition:all .25s}
+    .tool-cta:hover{border-color:rgba(0,229,160,0.5);transform:translateY(-2px)}
+    .tool-cta-icon{font-size:36px;flex-shrink:0}
+    .tool-cta-title{font-family:var(--font-head);font-size:17px;font-weight:700;margin-bottom:4px}
+    .tool-cta-desc{font-size:13px;color:var(--muted)}
+    .tool-cta-arrow{margin-left:auto;color:var(--accent);font-size:22px;font-weight:700}
+
+    /* NAVIGATION ARTICLES */
+    .article-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:60px;padding-top:40px;border-top:1px solid var(--border)}
+    @media(max-width:600px){.article-nav{grid-template-columns:1fr}}
+    .art-nav-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;transition:all .2s}
+    .art-nav-card:hover{border-color:rgba(0,229,160,0.3)}
+    .art-nav-label{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .art-nav-title{font-size:15px;font-weight:600}
+
+    /* AD */
+    .ad-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;margin:36px 0}
+    .ad-inner{min-height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border-radius:8px}
+
+    /* SIDEBAR STICKY */
+    .page-layout{display:grid;grid-template-columns:1fr 280px;gap:40px;max-width:1060px;margin:0 auto;padding:100px 20px 80px;align-items:start}
+    @media(max-width:900px){.page-layout{grid-template-columns:1fr}}
+    .sidebar{position:sticky;top:90px}
+    .sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px}
+    .sidebar-card h4{font-family:var(--font-head);font-size:15px;font-weight:700;margin-bottom:16px}
+    .toc-list{list-style:none}
+    .toc-list li{margin-bottom:10px}
+    .toc-list a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s;display:flex;gap:8px;align-items:start}
+    .toc-list a:hover{color:var(--accent)}
+    .toc-num{color:var(--accent);font-weight:700;font-size:11px;margin-top:2px;flex-shrink:0}
+
+    footer{border-top:1px solid var(--border);padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;margin-top:0}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);text-decoration:none}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">Finance<span>IQ</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Accueil</a>
+    <a href="../calculateur.html">Crédit</a>
+    <a href="../epargne.html">Épargne</a>
+    <a href="../blog.html">Blog</a>
+  </div>
+</nav>
+
+<div class="page-layout">
+  <!-- ARTICLE PRINCIPAL -->
+  <article>
+    <div class="article-hero">
+      <div class="breadcrumb"><a href="../index.html">Accueil</a> › <a href="../blog.html">Blog</a> › La règle des 50/30/20</div>
+      <div class="article-tag">💚 ÉPARGNE & BUDGET</div>
+      <h1 class="article-title">La règle des 50/30/20 expliquée simplement</h1>
+      <p class="article-intro">La méthode de budgétisation la plus populaire au monde. Comment diviser votre salaire pour vivre bien aujourd'hui tout en préparant demain — et pourquoi elle fonctionne même avec un petit revenu.</p>
+      <div class="article-meta">
+        <span>📅 Janvier 2025</span>
+        <span>⏱️ 8 min de lecture</span>
+        <span>✍️ FinanceIQ</span>
+        <span>👁️ Guide débutant</span>
+      </div>
+    </div>
+
+    <!-- ILLUSTRATION PRINCIPALE -->
+    <div class="article-visual">
+      <svg width="500" height="260" viewBox="0 0 500 260">
+        <!-- Donut chart 50/30/20 -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="44"/>
+        <!-- 50% vert -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#00e5a0" stroke-width="44"
+          stroke-dasharray="314 628" stroke-dashoffset="0" transform="rotate(-90 130 130)" opacity="0.9"/>
+        <!-- 30% bleu -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#4f8eff" stroke-width="44"
+          stroke-dasharray="188.4 628" stroke-dashoffset="-314" transform="rotate(-90 130 130)" opacity="0.85"/>
+        <!-- 20% orange -->
+        <circle cx="130" cy="130" r="100" fill="none" stroke="#f5a623" stroke-width="44"
+          stroke-dasharray="125.6 628" stroke-dashoffset="-502.4" transform="rotate(-90 130 130)" opacity="0.85"/>
+        <!-- Centre -->
+        <circle cx="130" cy="130" r="56" fill="#0a0f1e"/>
+        <text x="130" y="122" text-anchor="middle" fill="white" font-family="Syne,sans-serif" font-size="13" font-weight="700">50/30</text>
+        <text x="130" y="142" text-anchor="middle" fill="white" font-family="Syne,sans-serif" font-size="13" font-weight="700">/20</text>
+
+        <!-- Légendes -->
+        <rect x="270" y="50" width="14" height="14" rx="3" fill="#00e5a0"/>
+        <text x="292" y="62" fill="white" font-family="Syne,sans-serif" font-size="15" font-weight="700">50% — Besoins</text>
+        <text x="292" y="80" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">Loyer, courses, transport</text>
+        <text x="292" y="96" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">factures, assurances</text>
+
+        <rect x="270" y="120" width="14" height="14" rx="3" fill="#4f8eff"/>
+        <text x="292" y="132" fill="white" font-family="Syne,sans-serif" font-size="15" font-weight="700">30% — Envies</text>
+        <text x="292" y="150" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">Restaurants, loisirs</text>
+        <text x="292" y="166" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">vacances, abonnements</text>
+
+        <rect x="270" y="190" width="14" height="14" rx="3" fill="#f5a623"/>
+        <text x="292" y="202" fill="white" font-family="Syne,sans-serif" font-size="15" font-weight="700">20% — Épargne</text>
+        <text x="292" y="220" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">Épargne, investissement</text>
+        <text x="292" y="236" fill="#7a8aaa" font-family="DM Sans,sans-serif" font-size="12">remboursement dettes</text>
+      </svg>
+    </div>
+
+    <div class="article-content">
+
+      <h2 id="origine">D'où vient la règle des 50/30/20 ?</h2>
+      <p>La règle des 50/30/20 a été popularisée par <strong>Elizabeth Warren</strong>, professeure d'économie à Harvard et sénatrice américaine, dans son livre <em>All Your Worth: The Ultimate Lifetime Money Plan</em> publié en 2005. Sa thèse était simple : la plupart des problèmes financiers viennent d'une mauvaise répartition du budget, pas d'un manque d'argent.</p>
+      <p>Depuis, cette méthode est devenue la référence mondiale en matière de budgétisation personnelle. Elle est enseignée dans les écoles de commerce, recommandée par les conseillers financiers et adoptée par des millions de personnes dans le monde entier.</p>
+
+      <div class="highlight">
+        <div class="highlight-title">💡 Le principe fondamental</div>
+        <p>Divisez votre revenu net mensuel en trois grandes catégories : 50% pour les besoins, 30% pour les envies, et 20% pour l'épargne. Simple, mémorable, efficace.</p>
+      </div>
+
+      <h2 id="categories">Les trois catégories en détail</h2>
+
+      <h3>Les 50% — Besoins essentiels</h3>
+      <p>Cette catégorie regroupe toutes les dépenses <strong>indispensables à votre survie et fonctionnement quotidien</strong>. Ce sont les dépenses que vous ne pouvez pas éviter, celles qui resteraient même si vous deviez réduire votre train de vie au minimum.</p>
+
+      <ul>
+        <li><strong>Logement</strong> : loyer ou remboursement de prêt immobilier, charges de copropriété</li>
+        <li><strong>Alimentation</strong> : courses alimentaires (pas les restaurants)</li>
+        <li><strong>Transport</strong> : abonnement transport en commun, carburant, assurance voiture</li>
+        <li><strong>Factures</strong> : électricité, gaz, eau, internet, téléphone</li>
+        <li><strong>Assurances</strong> : santé complémentaire, habitation, auto</li>
+        <li><strong>Minimum sur dettes</strong> : remboursements minimaux de vos crédits</li>
+      </ul>
+
+      <div class="warning">
+        <div class="warning-title">⚠️ Attention si vous dépassez les 50%</div>
+        <p style="color:var(--muted);margin-top:0">Si vos besoins essentiels dépassent 50% de vos revenus (fréquent dans les grandes villes), c'est le signal que votre logement est trop cher ou que vous devez augmenter vos revenus. La règle devient difficile à appliquer sans revoir ces fondamentaux.</p>
+      </div>
+
+      <h3>Les 30% — Envies personnelles</h3>
+      <p>C'est la catégorie qui différencie un budget <strong>tenable sur le long terme</strong> d'un régime alimentaire. Les 30% d'envies ne sont pas du gaspillage — ils sont essentiels à votre bien-être et à la pérennité de votre budget.</p>
+
+      <ul>
+        <li>Restaurants, cafés, livraisons à domicile</li>
+        <li>Loisirs : cinéma, concerts, sport, jeux vidéo</li>
+        <li>Vacances et voyages</li>
+        <li>Vêtements et accessoires non essentiels</li>
+        <li>Abonnements : Netflix, Spotify, Amazon Prime</li>
+        <li>Sorties et activités sociales</li>
+      </ul>
+
+      <h3>Les 20% — Épargne et investissement</h3>
+      <p>C'est la catégorie la plus importante pour votre <strong>liberté financière à long terme</strong>. Ces 20% se décomposent idéalement en :</p>
+
+      <ul>
+        <li><strong>Épargne de précaution</strong> : jusqu'à avoir 3-6 mois de dépenses sur Livret A</li>
+        <li><strong>Remboursement accéléré de dettes</strong> : crédits à la consommation en priorité</li>
+        <li><strong>Investissement long terme</strong> : PEA, assurance-vie, PER</li>
+        <li><strong>Projets</strong> : apport immobilier, voiture, études</li>
+      </ul>
+
+      <h2 id="exemples">Exemples concrets selon votre revenu</h2>
+
+      <div class="example-card">
+        <h4>💼 Exemple 1 — Salaire net 2 000 €/mois</h4>
+        <div class="example-row"><span class="er-label">🏠 Besoins (50%)</span><span class="er-val" style="color:var(--accent)">1 000 €</span></div>
+        <div class="example-row"><span class="er-label">🎉 Envies (30%)</span><span class="er-val" style="color:var(--accent2)">600 €</span></div>
+        <div class="example-row"><span class="er-label">💰 Épargne (20%)</span><span class="er-val" style="color:#f5a623">400 €</span></div>
+        <div class="example-row"><span class="er-label">Total</span><span class="er-val">2 000 €</span></div>
+      </div>
+
+      <div class="example-card">
+        <h4>💼 Exemple 2 — Salaire net 3 500 €/mois</h4>
+        <div class="example-row"><span class="er-label">🏠 Besoins (50%)</span><span class="er-val" style="color:var(--accent)">1 750 €</span></div>
+        <div class="example-row"><span class="er-label">🎉 Envies (30%)</span><span class="er-val" style="color:var(--accent2)">1 050 €</span></div>
+        <div class="example-row"><span class="er-label">💰 Épargne (20%)</span><span class="er-val" style="color:#f5a623">700 €</span></div>
+        <div class="example-row"><span class="er-label">Total</span><span class="er-val">3 500 €</span></div>
+      </div>
+
+      <!-- AD MILIEU D'ARTICLE -->
+      <div class="ad-block">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Publicité</div>
+        <div class="ad-inner"><span style="font-size:13px;color:var(--muted)">336×280</span></div>
+      </div>
+
+      <h2 id="tableau">Répartition détaillée pour 2 000€/mois</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Catégorie</th><th>Poste</th><th>Montant</th><th>% du revenu</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>🏠 Besoins</td><td>Loyer + charges</td><td class="td-accent">700 €</td><td>35%</td></tr>
+            <tr><td>🏠 Besoins</td><td>Courses alimentaires</td><td class="td-accent">200 €</td><td>10%</td></tr>
+            <tr><td>🏠 Besoins</td><td>Transport</td><td class="td-accent">80 €</td><td>4%</td></tr>
+            <tr><td>🏠 Besoins</td><td>Factures + assurances</td><td class="td-accent">20 €</td><td>1%</td></tr>
+            <tr><td>🎉 Envies</td><td>Restaurants + sorties</td><td style="color:var(--accent2)">200 €</td><td>10%</td></tr>
+            <tr><td>🎉 Envies</td><td>Loisirs + abonnements</td><td style="color:var(--accent2)">150 €</td><td>7.5%</td></tr>
+            <tr><td>🎉 Envies</td><td>Vêtements + divers</td><td style="color:var(--accent2)">150 €</td><td>7.5%</td></tr>
+            <tr><td>💰 Épargne</td><td>Livret A (précaution)</td><td style="color:#f5a623">200 €</td><td>10%</td></tr>
+            <tr><td>💰 Épargne</td><td>PEA (investissement)</td><td style="color:#f5a623">200 €</td><td>10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="adapter">Comment adapter la règle à votre situation</h2>
+      <p>La règle des 50/30/20 est un <strong>point de départ, pas une loi immuable</strong>. En fonction de votre situation, vous devrez l'adapter.</p>
+
+      <h3>Si vous vivez dans une grande ville</h3>
+      <p>À Paris, Lyon ou Bordeaux, le logement dépasse souvent 40-50% du revenu pour un célibataire. Dans ce cas, réduisez les envies à 20% et maintenez les 20% d'épargne. Le logement est une contrainte, l'épargne ne l'est pas.</p>
+
+      <h3>Si vous avez des dettes</h3>
+      <p>Intégrez le remboursement accéléré dans les 20% d'épargne. Dettes à taux élevé (crédit conso, découvert) : remboursez en priorité avant d'investir.</p>
+
+      <h3>Si vous gagnez peu</h3>
+      <p>Même avec 1 200€/mois, la règle s'applique. 20% = 240€/mois mis de côté. Cela représente <strong>2 880€ épargnés en un an</strong> — une épargne de précaution solide en 18 mois.</p>
+
+      <div class="highlight">
+        <div class="highlight-title">🎯 Le piège à éviter</div>
+        <p>Beaucoup de gens attendent d'"avoir assez d'argent" pour commencer à épargner. C'est l'erreur numéro un. La règle des 50/30/20 fonctionne à tous les niveaux de revenu, car elle est basée sur des pourcentages, pas des montants fixes.</p>
+      </div>
+
+      <h2 id="mettre-en-place">Comment la mettre en place concrètement</h2>
+      <p>Voici un plan d'action en 4 étapes pour appliquer la règle dès ce mois-ci :</p>
+
+      <ol>
+        <li><strong>Calculez votre revenu net réel</strong> : salaire net après impôts, primes, allocations — tout ce qui rentre sur votre compte.</li>
+        <li><strong>Listez vos dépenses actuelles</strong> sur les 3 derniers mois (relevé de compte). Classez chaque dépense en Besoin, Envie ou Épargne.</li>
+        <li><strong>Comparez avec les ratios cibles</strong> (50/30/20). Identifiez où vous êtes hors cible.</li>
+        <li><strong>Automatisez l'épargne</strong> : créez un virement automatique vers votre Livret A ou PEA le jour de réception de votre salaire. Ce qui n'est pas visible n'est pas dépensé.</li>
+      </ol>
+
+      <a href="../index.html#budget" class="tool-cta">
+        <span class="tool-cta-icon">💰</span>
+        <div>
+          <div class="tool-cta-title">Simulateur de budget FinanceIQ</div>
+          <div class="tool-cta-desc">Entrez vos revenus et dépenses pour voir immédiatement votre taux d'épargne et votre répartition actuelle</div>
+        </div>
+        <span class="tool-cta-arrow">→</span>
+      </a>
+
+      <h2 id="conclusion">Conclusion</h2>
+      <p>La règle des 50/30/20 n'est pas magique. Elle ne résout pas les problèmes de revenus insuffisants et ne convient pas à toutes les situations. Mais elle a un avantage énorme : elle est <strong>simple à comprendre, facile à appliquer et prouvée efficace</strong> par des millions de personnes.</p>
+      <p>La vraie richesse ne vient pas d'un gros revenu — elle vient d'une gestion cohérente et régulière dans le temps. Commencez aujourd'hui, même modestement. Dans 5 ans, vous vous féliciterez d'avoir commencé.</p>
+
+      <!-- NAVIGATION ARTICLES -->
+      <div class="article-nav">
+        <a href="../blog.html" class="art-nav-card">
+          <div class="art-nav-label">← Article précédent</div>
+          <div class="art-nav-title">Retour au blog</div>
+        </a>
+        <a href="pea-vs-assurance-vie.html" class="art-nav-card" style="text-align:right">
+          <div class="art-nav-label">Article suivant →</div>
+          <div class="art-nav-title">PEA vs Assurance-vie : le comparatif complet</div>
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>📋 Dans cet article</h4>
+      <ul class="toc-list">
+        <li><a href="#origine"><span class="toc-num">01</span>D'où vient la règle ?</a></li>
+        <li><a href="#categories"><span class="toc-num">02</span>Les 3 catégories</a></li>
+        <li><a href="#exemples"><span class="toc-num">03</span>Exemples concrets</a></li>
+        <li><a href="#tableau"><span class="toc-num">04</span>Répartition détaillée</a></li>
+        <li><a href="#adapter"><span class="toc-num">05</span>Adapter à votre situation</a></li>
+        <li><a href="#mettre-en-place"><span class="toc-num">06</span>Mise en place</a></li>
+        <li><a href="#conclusion"><span class="toc-num">07</span>Conclusion</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>🛠️ Outils liés</h4>
+      <a href="../index.html#budget" style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.15);border-radius:10px;text-decoration:none;color:var(--text);margin-bottom:10px;font-size:13px;transition:all .2s">
+        <span style="font-size:20px">💰</span><span>Simulateur de budget</span>
+      </a>
+      <a href="../epargne.html" style="display:flex;align-items:center;gap:10px;padding:12px;background:rgba(79,142,255,0.06);border:1px solid rgba(79,142,255,0.15);border-radius:10px;text-decoration:none;color:var(--text);font-size:13px;transition:all .2s">
+        <span style="font-size:20px">📈</span><span>Simulateur d'épargne</span>
+      </a>
+    </div>
+
+    <div class="ad-block" style="margin:0">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Publicité</div>
+      <div class="ad-inner" style="min-height:250px"><span style="font-size:13px;color:var(--muted)">300×250</span></div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="../index.html">Accueil</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../calculateur.html">Calculateur crédit</a>
+    <a href="../chatbot.html">Assistant</a>
+  </div>
+  <p>© 2025 FinanceIQ · Article éducatif · Pas de conseil en investissement</p>
+</footer>
+</body>
+</html>
