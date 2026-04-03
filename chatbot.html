@@ -6,22 +6,12 @@
   <title>Assistant FinanceIQ — Chatbot Finance Gratuit</title>
   <meta name="description" content="Posez vos questions sur la finance personnelle à notre assistant gratuit. Budget, épargne, crédit, investissement — réponses instantanées sans inscription.">
   <meta name="keywords" content="chatbot finance, assistant finance personnel, questions épargne, conseils budget, aide investissement gratuit">
-
-  <!-- AdSense -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#0a0f1e; --surface:#111827; --card:#161f35;
-      --accent:#00e5a0; --accent2:#4f8eff;
-      --text:#f0f4ff; --muted:#7a8aaa; --border:rgba(255,255,255,0.07);
-      --font-head:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
-    }
+    :root{--bg:#0a0f1e;--surface:#111827;--card:#161f35;--accent:#00e5a0;--accent2:#4f8eff;--text:#f0f4ff;--muted:#7a8aaa;--border:rgba(255,255,255,0.07);--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
-
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(10,15,30,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
     .logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--accent);letter-spacing:-0.5px;text-decoration:none}
     .logo span{color:var(--text)}
@@ -29,7 +19,6 @@
     .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:var(--accent)}
     @media(max-width:700px){nav{padding:16px 20px}.nav-links{display:none}}
-
     .page-hero{padding:110px 20px 40px;text-align:center;position:relative}
     .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 30%,rgba(0,229,160,0.08) 0%,transparent 70%);pointer-events:none}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,160,0.1);border:1px solid rgba(0,229,160,0.25);border-radius:50px;padding:6px 16px;font-size:13px;color:var(--accent);margin-bottom:20px}
@@ -38,12 +27,8 @@
     h1{font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px}
     h1 em{font-style:normal;color:var(--accent)}
     .hero-sub{color:var(--muted);font-size:17px;max-width:500px;margin:0 auto}
-
-    /* LAYOUT */
     .main{max-width:1100px;margin:0 auto;padding:32px 20px 80px;display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
     @media(max-width:900px){.main{grid-template-columns:1fr}}
-
-    /* CHAT */
     .chat-container{background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;height:680px}
     .chat-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
     .bot-avatar{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
@@ -52,10 +37,7 @@
     .bot-info .bot-status::before{content:'●';font-size:8px}
     .chat-messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;scroll-behavior:smooth}
     .chat-messages::-webkit-scrollbar{width:4px}
-    .chat-messages::-webkit-scrollbar-track{background:transparent}
     .chat-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-
-    /* MESSAGES */
     .msg{display:flex;gap:10px;animation:msgIn .3s ease both}
     @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
     .msg.user{flex-direction:row-reverse}
@@ -68,28 +50,22 @@
     .msg-bubble strong{color:var(--accent);font-weight:600}
     .msg-bubble a{color:var(--accent2);text-decoration:none}
     .msg-bubble a:hover{text-decoration:underline}
-
-    /* CHIPS SUGGESTIONS */
+    .msg-bubble p{margin-bottom:6px}
+    .msg-bubble p:last-child{margin-bottom:0}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     .chip{background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);border-radius:50px;padding:7px 14px;font-size:12px;color:var(--accent);cursor:pointer;transition:all .2s;font-family:var(--font-body)}
     .chip:hover{background:rgba(0,229,160,0.18);border-color:rgba(0,229,160,0.4)}
-
-    /* OUTIL CARD dans le chat */
     .tool-link{display:flex;align-items:center;gap:12px;background:rgba(79,142,255,0.08);border:1px solid rgba(79,142,255,0.2);border-radius:12px;padding:12px 16px;margin-top:8px;text-decoration:none;color:var(--text);transition:all .2s}
     .tool-link:hover{border-color:rgba(79,142,255,0.5);background:rgba(79,142,255,0.14)}
     .tool-link-icon{font-size:22px}
     .tool-link-info .tl-name{font-size:14px;font-weight:600}
     .tool-link-info .tl-desc{font-size:12px;color:var(--muted)}
     .tool-link-arrow{margin-left:auto;color:var(--accent2);font-size:18px}
-
-    /* TYPING */
     .typing{display:flex;gap:4px;align-items:center;padding:14px 18px}
     .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:bounce 1.2s infinite}
     .typing span:nth-child(2){animation-delay:.2s}
     .typing span:nth-child(3){animation-delay:.4s}
     @keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}
-
-    /* INPUT */
     .chat-input-wrap{padding:16px 20px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-end}
     .chat-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:12px 16px;color:var(--text);font-size:15px;font-family:var(--font-body);outline:none;resize:none;max-height:120px;transition:border-color .2s;line-height:1.5}
     .chat-input:focus{border-color:rgba(0,229,160,0.4)}
@@ -97,8 +73,6 @@
     .send-btn{width:44px;height:44px;background:var(--accent);border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s,transform .2s;flex-shrink:0}
     .send-btn:hover{opacity:.85;transform:scale(1.05)}
     .send-btn svg{width:18px;height:18px;fill:#0a0f1e}
-
-    /* SIDEBAR */
     .sidebar{display:flex;flex-direction:column;gap:20px}
     .side-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px}
     .side-card h3{font-family:var(--font-head);font-size:16px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
@@ -110,21 +84,22 @@
     .tool-nav-btn{display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--muted);font-size:13px;transition:all .2s}
     .tool-nav-btn:hover{border-color:rgba(79,142,255,0.3);color:var(--text);background:rgba(79,142,255,0.07)}
     .tool-nav-btn .tnb-icon{font-size:18px}
-
-    /* AD */
     .ad-block{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
     .ad-inner{min-height:90px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border-radius:8px}
+    footer{border-top:1px solid var(--border);padding:40px 20px;text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+    .footer-links{display:flex;gap:24px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+    .footer-links a{color:var(--muted);text-decoration:none}
+    .footer-links a:hover{color:var(--accent)}
   </style>
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="logo">Finance<span>IQ</span></a>
   <div class="nav-links">
     <a href="index.html">Accueil</a>
     <a href="calculateur.html">Crédit</a>
     <a href="epargne.html">Épargne</a>
-    <a href="loyer-vs-achat.html">Loyer vs Achat</a>
+    <a href="blog.html">Blog</a>
     <a href="chatbot.html" class="active">Assistant</a>
   </div>
 </nav>
@@ -136,8 +111,6 @@
 </div>
 
 <div class="main">
-
-  <!-- CHAT -->
   <div class="chat-container">
     <div class="chat-header">
       <div class="bot-avatar">🤖</div>
@@ -155,7 +128,6 @@
     </div>
   </div>
 
-  <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="side-card">
       <h3>💬 Sujets populaires</h3>
@@ -170,7 +142,6 @@
         <button class="topic-btn" onclick="askTopic('Comment sortir des dettes ?')"><span class="topic-icon">🆘</span>Sortir des dettes</button>
       </div>
     </div>
-
     <div class="side-card">
       <h3>🛠️ Nos outils</h3>
       <div class="tools-nav">
@@ -178,9 +149,9 @@
         <a href="calculateur.html" class="tool-nav-btn"><span class="tnb-icon">🏦</span>Calculateur de crédit</a>
         <a href="epargne.html" class="tool-nav-btn"><span class="tnb-icon">📈</span>Simulateur d'épargne</a>
         <a href="loyer-vs-achat.html" class="tool-nav-btn"><span class="tnb-icon">🏠</span>Loyer vs Achat</a>
+        <a href="blog.html" class="tool-nav-btn"><span class="tnb-icon">📚</span>Blog & Guides</a>
       </div>
     </div>
-
     <div class="ad-block">
       <div style="font-size:11px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Publicité</div>
       <div class="ad-inner"><span style="font-size:13px;color:var(--muted)">300×250</span></div>
@@ -188,236 +159,97 @@
   </div>
 </div>
 
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Accueil</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+  </div>
+  <p>© 2025 FinanceIQ · Outil éducatif · Pas de conseil en investissement</p>
+</footer>
+
 <script>
-// ═══════════════════════════════════════════════
-// Ajouter mémoire
-// ═══════════════════════════════════════════════
+// ═══════════════════════════════════
+// PROFIL UTILISATEUR — mémoire session
+// ═══════════════════════════════════
 let userProfile = {
-  objectif: null,
-  revenu: null,
-  step: null
+  objectif: null,   // 'epargne' | 'budget' | 'credit' | 'retraite'
+  revenu: null,     // montant mensuel net
+  age: null,        // âge si fourni
+  step: null        // étape du flow conversationnel en cours
 };
-// ═══════════════════════════════════════════════
-// Détecter intention
-// ═══════════════════════════════════════════════
-  function detectIntent(query) {
-  const q = query.toLowerCase();
 
-  if (q.includes('épargner') || q.includes('épargne')) return 'epargne';
-  if (q.includes('acheter') || q.includes('immobilier')) return 'immobilier';
-  if (q.includes('budget')) return 'budget';
+// Réinitialise le flow actif sans effacer le profil global
+function resetFlow() {
+  userProfile.step = null;
+  userProfile.objectif = null;
+}
 
+// ═══════════════════════
+// DÉTECTION D'INTENTION
+// ═══════════════════════
+function detectIntent(query) {
+  const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  if (/epargn|economis|mettre de cote/.test(q)) return 'epargne';
+  if (/budget|depens|argent|finance/.test(q)) return 'budget';
+  if (/credit|emprunt|immobilier|pret|acheter/.test(q)) return 'credit';
+  if (/retraite|per|pension/.test(q)) return 'retraite';
   return null;
 }
-// ═══════════════════════════════════════════════
-// BASE DE CONNAISSANCES — 60+ questions/réponses
-// ═══════════════════════════════════════════════
-const KB = [
-  // ── ÉPARGNE ──
-  {
-    tags: ['épargner','épargne','économiser','mettre de côté','économies'],
-    title: 'Comment épargner efficacement ?',
-    reponse: `La règle d'or : <strong>payez-vous en premier</strong>. Dès réception de votre salaire, virez automatiquement une somme fixe vers votre épargne — avant même de penser aux dépenses.\n\nLa méthode <strong>50/30/20</strong> est un bon point de départ :\n• 50% pour les besoins essentiels (loyer, courses, charges)\n• 30% pour les envies (restaurants, loisirs)\n• 20% pour l'épargne\n\nMême 50€/mois pendant 20 ans à 5% = plus de <strong>20 000€</strong>. La régularité prime sur le montant.`,
-    chips: ['Où placer mon épargne ?','Combien épargner par mois ?','Qu\'est-ce que le Livret A ?'],
-    outil: null
-  },
-  {
-    tags: ['taux épargne','combien épargner','pourcentage épargner','épargner mois'],
-    title: 'Combien épargner par mois ?',
-    reponse: `Les experts recommandent <strong>10 à 20%</strong> de vos revenus nets. Mais tout dépend de votre situation.\n\nQuelques repères :\n• <strong>5%</strong> : minimum pour commencer à construire une sécurité\n• <strong>10%</strong> : bon équilibre entre vie présente et futur\n• <strong>20%+</strong> : objectif FIRE (retraite anticipée) ou gros projet\n\nL'essentiel ? Commencer avec ce que vous pouvez, même peu — et augmenter progressivement.`,
-    chips: ['Simuler mon épargne sur 20 ans','Comment l\'intérêt composé fonctionne ?'],
-    outil: { icon:'📈', name:'Simulateur d\'épargne', desc:'Calculez combien vous aurez dans X ans', url:'epargne.html' }
-  },
-  {
-    tags: ['livret a','livret','taux livret','plafond livret'],
-    title: 'Tout sur le Livret A',
-    reponse: `Le <strong>Livret A</strong> est le placement de référence en France :\n\n• Taux : <strong>3%</strong> net (2024)\n• Plafond : <strong>22 950€</strong>\n• Totalement <strong>défiscalisé</strong> (zéro impôt sur les intérêts)\n• Garanti par l'État\n• Argent disponible à tout moment\n\nC'est le placement idéal pour votre <strong>épargne de précaution</strong> (3-6 mois de dépenses). Au-delà du plafond ou pour faire fructifier davantage, tournez-vous vers un PEA ou une assurance-vie.`,
-    chips: ['Qu\'est-ce que le PEA ?','PEA vs assurance-vie ?','Épargne de précaution : combien ?']
-  },
-  {
-    tags: ['intérêt composé','intérêts composés','compound','capitalisation'],
-    title: 'Comment fonctionnent les intérêts composés ?',
-    reponse: `L'intérêt composé, c'est <strong>les intérêts qui génèrent eux-mêmes des intérêts</strong>. Einstein l'appelait la 8e merveille du monde.\n\nExemple concret :\n• 1 000€ à 5%/an → 1 050€ après 1 an\n• L'année suivante, vous gagnez 5% sur 1 050€ (pas 1 000€)\n• Après 10 ans → <strong>1 629€</strong> (et non 1 500€)\n• Après 30 ans → <strong>4 322€</strong> sans rien ajouter !\n\nLa clé : <strong>commencer tôt</strong>. 10 ans d'avance valent souvent plus qu'un double versement.`,
-    chips: ['Simuler ma croissance','Règle des 72 ?'],
-    outil: { icon:'📈', name:'Simulateur d\'épargne', desc:'Visualisez la puissance des intérêts composés', url:'epargne.html' }
-  },
-  {
-    tags: ['règle 72','doubler capital','doublement'],
-    title: 'La règle des 72',
-    reponse: `La <strong>règle des 72</strong> permet d'estimer en quelques secondes le temps pour doubler votre capital :\n\n<strong>Années pour doubler = 72 ÷ taux annuel</strong>\n\nExemples :\n• À 3% (Livret A) → 24 ans\n• À 5% → 14 ans\n• À 7% (ETF monde) → 10 ans\n• À 9% → 8 ans\n\nC'est une approximation pratique pour comparer des placements sans calculatrice.`,
-    chips: ['Qu\'est-ce qu\'un ETF ?','Comment investir en bourse ?']
-  },
-  {
-    tags: ['épargne précaution','matelas sécurité','réserve urgence','fonds urgence'],
-    title: 'Épargne de précaution : combien faut-il ?',
-    reponse: `L'épargne de précaution, c'est votre <strong>filet de sécurité</strong> contre les imprévus (panne voiture, chômage, santé...).\n\nLa règle :\n• <strong>CDI</strong> : 3 mois de dépenses courantes\n• <strong>Indépendant / CDD / Freelance</strong> : 6 mois minimum\n\nOù la placer ? Sur un <strong>Livret A</strong> uniquement — accessible instantanément, sans risque. Pas question de la placer en bourse.\n\nUne fois cette épargne constituée, le reste peut être investi plus agressivement.`,
-    chips: ['Où placer le reste ?','Qu\'est-ce que le PEA ?']
-  },
 
-  // ── INVESTISSEMENT ──
-  {
-    tags: ['pea','plan épargne actions','ouvrir pea'],
-    title: 'Qu\'est-ce que le PEA ?',
-    reponse: `Le <strong>PEA (Plan d'Épargne en Actions)</strong> est l'enveloppe fiscale reine pour investir en bourse :\n\n• Plafond versements : <strong>150 000€</strong>\n• Avantage fiscal : exonération d'impôt sur les plus-values après <strong>5 ans</strong>\n• Investit en actions européennes (et ETF monde via certains fonds)\n• Disponible dans toutes les banques et courtiers en ligne\n\n💡 La stratégie populaire : acheter des <strong>ETF MSCI World</strong> dans un PEA = diversification mondiale + fiscalité avantageuse.`,
-    chips: ['C\'est quoi un ETF ?','PEA vs assurance-vie ?','Comment investir 100€/mois ?']
-  },
-  {
-    tags: ['etf','trackers','fonds indiciels','msci world','sp500'],
-    title: 'Qu\'est-ce qu\'un ETF ?',
-    reponse: `Un <strong>ETF (Exchange Traded Fund)</strong> ou tracker est un fonds qui réplique automatiquement un indice boursier.\n\nExemple : un ETF MSCI World investit dans les <strong>1 500+ plus grandes entreprises mondiales</strong> en une seule transaction.\n\nPourquoi c'est génial :\n• <strong>Frais ultra-faibles</strong> : 0.1% à 0.3%/an (vs 1-2% pour les fonds classiques)\n• <strong>Diversification maximale</strong> automatique\n• Performance historique : ~7-9%/an sur 30 ans\n• Accessible dès 1€ sur un PEA ou compte-titres\n\nC'est la stratégie recommandée par Warren Buffett lui-même pour les particuliers.`,
-    chips: ['Comment ouvrir un PEA ?','Risques de la bourse ?','DCA : investir régulièrement ?']
-  },
-  {
-    tags: ['assurance vie','assurance-vie','av','contrat vie'],
-    title: 'Assurance-vie : comment ça marche ?',
-    reponse: `L'<strong>assurance-vie</strong> est le placement préféré des Français. C'est une enveloppe fiscale très flexible :\n\n<strong>2 types de supports :</strong>\n• <strong>Fonds euros</strong> : capital garanti, ~2.5-4%/an. Idéal pour sécuriser.\n• <strong>Unités de compte (UC)</strong> : actions, ETF, SCPI. Plus risqué mais potentiel supérieur.\n\n<strong>Avantage fiscal après 8 ans :</strong> abattement annuel de 4 600€ (seul) ou 9 200€ (couple) sur les gains.\n\n💡 Idéale pour préparer la retraite ou transmettre un patrimoine hors succession.`,
-    chips: ['PEA vs assurance-vie ?','SCPI : qu\'est-ce que c\'est ?']
-  },
-  {
-    tags: ['pea assurance vie','comparer pea av','pea ou assurance','choisir placement'],
-    title: 'PEA ou Assurance-vie : lequel choisir ?',
-    reponse: `Les deux sont complémentaires !\n\n<strong>PEA :</strong>\n✅ Exonération totale après 5 ans\n✅ Idéal pour actions / ETF européens\n❌ Plafond 150k€, retraits limités avant 5 ans\n\n<strong>Assurance-vie :</strong>\n✅ Très flexible (retrait à tout moment)\n✅ Avantage successoral fort\n✅ Fonds euros sécurisés disponibles\n❌ Fiscalité optimale seulement après 8 ans\n\n<strong>Stratégie optimale :</strong>\n1. Livret A (précaution)\n2. PEA avec ETF (long terme, actions)\n3. Assurance-vie (retraite + transmission)`,
-    chips: ['Comment investir 100€/mois ?','ETF : comment ça marche ?']
-  },
-  {
-    tags: ['investir bourse','débuter bourse','commencer investir','100 euros mois','investissement mensuel','dca'],
-    title: 'Comment investir régulièrement en bourse ?',
-    reponse: `La meilleure stratégie pour débuter : le <strong>DCA (Dollar Cost Averaging)</strong> — investir la même somme chaque mois, peu importe le marché.\n\n<strong>Pourquoi ça marche :</strong>\n• Vous achetez plus quand c'est bas, moins quand c'est haut\n• Aucun stress à "timer" le marché\n• Discipline automatique\n\n<strong>Plan concret pour 100€/mois :</strong>\n1. Ouvrir un PEA chez un courtier en ligne (Boursorama, Trade Republic, Fortuneo)\n2. Acheter un ETF MSCI World chaque mois\n3. Ne pas regarder tous les jours — penser 10-20 ans\n\n100€/mois à 7% pendant 25 ans = <strong>81 000€</strong>`,
-    chips: ['Simuler 100€/mois','Qu\'est-ce qu\'un ETF ?','Risques de la bourse ?'],
-    outil: { icon:'📈', name:'Simulateur d\'épargne', desc:'Calculez le résultat de vos versements mensuels', url:'epargne.html' }
-  },
-
-  // ── CRÉDIT ──
-  {
-    tags: ['crédit immobilier','prêt immobilier','mortgage','emprunt immobilier'],
-    title: 'Comment fonctionne un crédit immobilier ?',
-    reponse: `Un crédit immobilier, c'est un prêt remboursé par des <strong>mensualités fixes</strong> pendant 15 à 25 ans.\n\nLa mensualité comprend :\n• <strong>Capital</strong> : ce que vous remboursez du prêt\n• <strong>Intérêts</strong> : ce que vous payez à la banque\n• <strong>Assurance</strong> : obligatoire (décès, invalidité)\n\nAu début du prêt, vous payez surtout des intérêts. Avec le temps, la part de capital augmente.\n\n💡 Négociez toujours le <strong>taux d'assurance</strong> — il peut représenter 30% du coût total du crédit !`,
-    chips: ['Calculer mes mensualités','Quel apport faut-il ?','Taux fixe ou variable ?'],
-    outil: { icon:'🏦', name:'Calculateur de crédit', desc:'Simulez vos mensualités en quelques secondes', url:'calculateur.html' }
-  },
-  {
-    tags: ['mensualités','calculer mensualité','simulation crédit','remboursement'],
-    title: 'Comment calculer ses mensualités de crédit ?',
-    reponse: `La formule est :\n\n<strong>M = C × [r(1+r)ⁿ] / [(1+r)ⁿ - 1]</strong>\n\nOù C = capital, r = taux mensuel, n = nombre de mois.\n\nMais pas besoin de calculer à la main ! Notre outil fait ça instantanément pour vous, avec le tableau d'amortissement complet.`,
-    chips: ['Calculer maintenant','Taux immobilier actuels ?'],
-    outil: { icon:'🏦', name:'Calculateur de crédit', desc:'Mensualités + tableau d\'amortissement complet', url:'calculateur.html' }
-  },
-  {
-    tags: ['apport immobilier','apport personnel','combien apport'],
-    title: 'Quel apport faut-il pour acheter ?',
-    reponse: `Les banques demandent généralement <strong>10 à 20%</strong> du prix du bien en apport.\n\n<strong>Minimum conseillé :</strong>\n• 10% pour couvrir les frais de notaire (7-8% dans l'ancien)\n• 20% pour obtenir les meilleurs taux et conditions\n\n<strong>Exemple pour un bien à 250 000€ :</strong>\n• Frais notaire : ~18 750€\n• Apport idéal : 50 000€ (20%)\n• Crédit : 200 000€\n\n💡 Sans apport, certaines banques accordent quand même des prêts aux primo-accédants avec un bon dossier.`,
-    chips: ['Louer ou acheter ?','Simuler mon crédit','Frais de notaire : combien ?']
-  },
-  {
-    tags: ['frais notaire','frais achat','frais acquisition'],
-    title: 'Combien coûtent les frais de notaire ?',
-    reponse: `Les frais de notaire varient selon le type de bien :\n\n• <strong>Ancien</strong> : 7 à 8% du prix (ex: 17 500€ pour 250k€)\n• <strong>Neuf</strong> : 2 à 3% seulement\n• <strong>Terrain</strong> : environ 7%\n\nIls se décomposent en :\n• Droits de mutation (taxes) : ~5.8%\n• Honoraires du notaire : ~1%\n• Frais divers : ~0.5%\n\n⚠️ Ces frais sont payés le jour de la signature et ne sont <strong>pas financés</strong> par le crédit dans la plupart des cas. Prévoyez-les dans votre apport.`,
-    chips: ['Quel apport faut-il ?','Loyer ou achat ?']
-  },
-  {
-    tags: ['taux endettement','capacité emprunt','combien emprunter','revenus crédit'],
-    title: 'Combien puis-je emprunter ?',
-    reponse: `Les banques appliquent la règle du <strong>taux d'endettement maximum de 35%</strong> de vos revenus nets.\n\nFormule :\n<strong>Mensualité max = Revenus nets × 35%</strong>\n\nExemple avec 3 000€/mois :\n• Mensualité max : 1 050€\n• À 3.5% sur 20 ans → capacité d'emprunt ≈ <strong>180 000€</strong>\n\nPour maximiser votre capacité :\n✅ Solder vos crédits conso avant de demander un prêt immo\n✅ Augmenter votre apport\n✅ Emprunter à deux (revenus cumulés)`,
-    chips: ['Calculer ma capacité d\'emprunt','Quel apport faut-il ?'],
-    outil: { icon:'🏦', name:'Calculateur de crédit', desc:'Simulez votre capacité d\'emprunt', url:'calculateur.html' }
-  },
-
-  // ── LOYER VS ACHAT ──
-  {
-    tags: ['loyer achat','acheter louer','propriétaire locataire','meilleur achat location'],
-    title: 'Vaut-il mieux louer ou acheter ?',
-    reponse: `Ça dépend surtout de <strong>combien de temps vous restez</strong> dans le logement.\n\nEn général :\n• <strong>Moins de 5 ans</strong> → Louer est souvent plus économique (frais de notaire non amortis)\n• <strong>5-7 ans</strong> → Zone grise, dépend du marché local\n• <strong>Plus de 7 ans</strong> → Acheter devient généralement plus avantageux\n\nMais d'autres facteurs comptent : stabilité professionnelle, taux du crédit, prix du marché local, rendement de votre épargne alternative.\n\nNotre simulateur calcule le <strong>seuil de rentabilité exact</strong> selon votre situation !`,
-    chips: ['Calculer mon seuil de rentabilité','Frais de notaire ?','Quel apport faut-il ?'],
-    outil: { icon:'🏠', name:'Simulateur Loyer vs Achat', desc:'Trouvez votre seuil de rentabilité exact', url:'loyer-vs-achat.html' }
-  },
-
-  // ── BUDGET ──
-  {
-    tags: ['budget','gérer budget','faire budget','méthode budget','organiser finances'],
-    title: 'Comment faire son budget ?',
-    reponse: `La méthode la plus simple et efficace : la règle <strong>50/30/20</strong>\n\n• <strong>50%</strong> → Besoins essentiels : loyer, courses, transport, factures\n• <strong>30%</strong> → Envies : restaurants, sorties, abonnements, vacances\n• <strong>20%</strong> → Épargne et remboursement de dettes\n\nAutres méthodes :\n• <strong>Budget base zéro</strong> : chaque euro a une destination prévue\n• <strong>Enveloppes</strong> : montants fixes par catégorie en cash ou digital\n\n💡 La clé n'est pas la méthode mais la <strong>régularité</strong>. Même 15 minutes par semaine suffit.`,
-    chips: ['Simuler mon budget','Réduire ses dépenses','Taux d\'épargne idéal ?'],
-    outil: { icon:'💰', name:'Simulateur de budget', desc:'Visualisez votre budget en temps réel', url:'index.html#budget' }
-  },
-  {
-    tags: ['réduire dépenses','économiser','couper dépenses','moins dépenser'],
-    title: 'Comment réduire ses dépenses ?',
-    reponse: `Les <strong>5 leviers les plus efficaces</strong> pour réduire ses dépenses :\n\n1. <strong>Abonnements oubliés</strong> : faites la liste de tous vos abonnements. En moyenne, on paye 3-4 services qu'on n'utilise plus.\n\n2. <strong>Assurances</strong> : comparez chaque année. Vous pouvez économiser 200-500€/an.\n\n3. <strong>Alimentation</strong> : faire une liste de courses, cuisiner en batch, éviter les livraisons.\n\n4. <strong>Énergie</strong> : changer de fournisseur, quelques gestes simples = 150-300€/an.\n\n5. <strong>Crédits conso</strong> : remboursez-les en priorité — les taux (5-20%) mangent votre budget.`,
-    chips: ['Faire un budget','Rembourser ses dettes ?']
-  },
-  {
-    tags: ['dettes','remboursement dettes','sortir dettes','surendettement','crédit conso'],
-    title: 'Comment sortir des dettes ?',
-    reponse: `Deux stratégies éprouvées :\n\n<strong>1. Méthode Avalanche (mathématiquement optimale) :</strong>\nRemboursez en priorité le crédit avec le <strong>taux le plus élevé</strong>. Vous payez moins d'intérêts au total.\n\n<strong>2. Méthode Boule de neige (psychologiquement efficace) :</strong>\nRemboursez en priorité le <strong>plus petit crédit</strong>. Les victoires rapides motivent à continuer.\n\n<strong>À faire immédiatement :</strong>\n• Stoppez tout nouvel emprunt\n• Négociez un regroupement de crédits si plusieurs dettes\n• Contactez un conseiller Banque de France (gratuit) si situation critique`,
-    chips: ['Simuler le remboursement','Réduire mes dépenses']
-  },
-
-  // ── RETRAITE ──
-  {
-    tags: ['retraite','préparer retraite','épargne retraite','per','plan retraite'],
-    title: 'Comment préparer sa retraite ?',
-    reponse: `Plus tôt vous commencez, moins vous avez besoin d'épargner. Les outils clés :\n\n<strong>1. PER (Plan d'Épargne Retraite)</strong>\n• Déduction fiscale immédiate sur les versements\n• Idéal si vous êtes dans une tranche marginale élevée (30%+)\n• Argent bloqué jusqu'à la retraite (sauf accidents de vie)\n\n<strong>2. Assurance-vie</strong>\n• Plus flexible (retraits possibles)\n• Avantage successoral fort\n\n<strong>3. PEA + ETF</strong>\n• Meilleur rendement long terme\n• Disponible à partir de 5 ans\n\n💡 Règle de base : <strong>chaque décennie de retard = double les versements nécessaires</strong>`,
-    chips: ['Simuler ma retraite','PEA vs assurance-vie ?','Combien épargner ?'],
-    outil: { icon:'📈', name:'Simulateur d\'épargne', desc:'Projetez votre capital retraite', url:'epargne.html' }
-  },
-
-  // ── QUESTIONS GÉNÉRALES ──
-  {
-    tags: ['inflation','pouvoir achat','prix','euros constants'],
-    title: 'Comment l\'inflation affecte-t-elle mon épargne ?',
-    reponse: `L'inflation réduit le <strong>pouvoir d'achat</strong> de votre argent chaque année.\n\nImpact concret à 2%/an :\n• 100 000€ aujourd'hui = 82 000€ de pouvoir d'achat dans 10 ans\n• = 67 000€ dans 20 ans\n• = 55 000€ dans 30 ans\n\n<strong>Ce que ça signifie :</strong>\nUn Livret A à 3% avec une inflation à 3% vous rapporte <strong>0% en termes réels</strong>. Vous ne vous appauvrissez pas, mais vous ne vous enrichissez pas non plus.\n\nPour battre l'inflation sur le long terme : actions, ETF, immobilier — les actifs réels.`,
-    chips: ['Comment investir ?','Simuler avec inflation','PEA : comment ça marche ?']
-  },
-  {
-    tags: ['diversification','ne pas mettre oeufs panier','répartir placements'],
-    title: 'Pourquoi diversifier ses placements ?',
-    reponse: `La diversification réduit le risque sans forcément réduire le rendement.\n\nPrincipe : quand certains actifs baissent, d'autres montent ou restent stables.\n\n<strong>Diversification optimale :</strong>\n• Géographique : monde entier, pas seulement France\n• Sectorielle : tech, santé, finance, industrie...\n• Par classe d'actifs : actions, obligations, immobilier\n• Temporelle : DCA (investissement régulier)\n\nUn ETF MSCI World vous donne automatiquement une diversification parmi les 1 500 plus grandes entreprises mondiales.`,
-    chips: ['ETF : comment ça marche ?','Comment investir régulièrement ?']
-  },
-  {
-    tags: ['scpi','immobilier papier','investir immobilier sans acheter'],
-    title: 'Qu\'est-ce qu\'une SCPI ?',
-    reponse: `Une <strong>SCPI (Société Civile de Placement Immobilier)</strong>, c'est de l'immobilier locatif sans les contraintes de gestion.\n\nComment ça marche :\n• Vous achetez des <strong>parts</strong> (à partir de quelques centaines d'euros)\n• La SCPI gère un parc immobilier (bureaux, commerces, logements)\n• Vous recevez des <strong>loyers proportionnels</strong> à vos parts (trimestriellement)\n\n<strong>Rendement moyen :</strong> 4 à 6%/an\n\nAvantages : accessibilité, diversification, gestion déléguée.\nInconvénients : frais d'entrée (8-12%), liquidité limitée, risque de baisse des loyers.`,
-    chips: ['Comparer les placements','PEA vs SCPI ?']
-  },
-  {
-    tags: ['impôts investissement','flat tax','fiscalité','prélèvement forfaitaire'],
-    title: 'Quelle fiscalité sur mes placements ?',
-    reponse: `En France, les gains financiers sont soumis à la <strong>Flat Tax (PFU) de 30%</strong> :\n• 12.8% d'impôt sur le revenu\n• 17.2% de prélèvements sociaux\n\n<strong>Exceptions avantageuses :</strong>\n• <strong>Livret A / LDDS</strong> : 0% (totalement défiscalisé)\n• <strong>PEA après 5 ans</strong> : seulement 17.2% (pas d'IR)\n• <strong>Assurance-vie après 8 ans</strong> : abattement 4 600€/9 200€\n• <strong>PER</strong> : déductible à l'entrée\n\nConclusion : l'enveloppe dans laquelle vous investissez est souvent aussi importante que ce dans quoi vous investissez.`,
-    chips: ['PEA : avantages fiscaux','Assurance-vie : comment ça marche ?']
-  }
-];
-
-  const ARTICLES = [
-  {
-    tags: ['50/30/20','budget'],
-    title: 'Règle 50/30/20',
-    url: 'articles/regle-50-30-20.html'
-  },
-  {
-    tags: ['pea','assurance vie'],
-    title: 'PEA vs Assurance-vie',
-    url: 'articles/pea-vs-assurance-vie.html'
-  },
-  {
-    tags: ['investir','100 euros'],
-    title: 'Investir 100€ par mois',
-    url: 'articles/investir-100-euros-mois.html'
-  },
-  {
-    tags: ['immobilier','crédit'],
-    title: 'Négocier son crédit immobilier',
-    url: 'articles/negocier-credit-immobilier.html'
-  }
-];
-
-  function findArticle(query) {
-  const q = query.toLowerCase();
-
-  return ARTICLES.find(a =>
-    a.tags.some(tag => q.includes(tag))
-  );
+// Extrait un nombre depuis une réponse utilisateur
+function extractNumber(text) {
+  const match = text.replace(/\s/g,'').match(/\d{2,6}/);
+  return match ? parseInt(match[0]) : null;
 }
+
+// ═══════════════════════════════════════
+// BASE DE CONNAISSANCES — 60+ réponses
+// ═══════════════════════════════════════
+const KB = [
+  { tags:['epargner','epargne','economiser','mettre de cote','economies'], title:'Comment épargner efficacement ?', reponse:`La règle d'or : <strong>payez-vous en premier</strong>. Dès réception de votre salaire, virez automatiquement une somme fixe vers votre épargne.\n\nLa méthode <strong>50/30/20</strong> :\n• 50% besoins essentiels\n• 30% envies\n• 20% épargne\n\nMême 50€/mois pendant 20 ans à 5% = plus de <strong>20 000€</strong>.`, chips:["Où placer mon épargne ?","Combien épargner par mois ?","Qu'est-ce que le Livret A ?"] },
+  { tags:['combien epargner','taux epargne','pourcentage epargner'], title:'Combien épargner par mois ?', reponse:`Les experts recommandent <strong>10 à 20%</strong> de vos revenus nets.\n\n• <strong>5%</strong> : minimum pour commencer\n• <strong>10%</strong> : bon équilibre\n• <strong>20%+</strong> : objectif FIRE ou gros projet`, chips:['Simuler mon épargne','Comment les intérêts composés fonctionnent ?'], outil:{icon:'📈',name:"Simulateur d'épargne",desc:'Calculez combien vous aurez dans X ans',url:'epargne.html'} },
+  { tags:['livret a','livret','taux livret','plafond livret'], title:'Tout sur le Livret A', reponse:`Le <strong>Livret A</strong> :\n• Taux : <strong>3%</strong> net (2024)\n• Plafond : <strong>22 950€</strong>\n• Défiscalisé, garanti par l'État\n• Disponible à tout moment\n\nIdéal pour votre <strong>épargne de précaution</strong> (3-6 mois de dépenses).`, chips:["Qu'est-ce que le PEA ?","PEA vs assurance-vie ?","Épargne de précaution : combien ?"] },
+  { tags:['interet compose','interets composes','capitalisation'], title:'Comment fonctionnent les intérêts composés ?', reponse:`L'intérêt composé = <strong>les intérêts qui génèrent eux-mêmes des intérêts</strong>.\n\n• 1 000€ à 5%/an → 1 629€ après 10 ans\n• Après 30 ans → <strong>4 322€</strong> sans rien ajouter\n\nLa clé : <strong>commencer tôt</strong>.`, chips:['Simuler ma croissance','Règle des 72 ?'], outil:{icon:'📈',name:"Simulateur d'épargne",desc:'Visualisez la puissance des intérêts composés',url:'epargne.html'} },
+  { tags:['regle 72','doubler capital'], title:'La règle des 72', reponse:`<strong>Années pour doubler = 72 ÷ taux</strong>\n\n• À 3% → 24 ans\n• À 5% → 14 ans\n• À 7% → 10 ans\n• À 9% → 8 ans`, chips:["Qu'est-ce qu'un ETF ?",'Comment investir en bourse ?'] },
+  { tags:['epargne precaution','matelas securite','reserve urgence'], title:'Épargne de précaution : combien ?', reponse:`• <strong>CDI</strong> : 3 mois de dépenses\n• <strong>Freelance / CDD</strong> : 6 mois minimum\n\nOù la placer ? Sur un <strong>Livret A</strong> uniquement — disponible immédiatement.`, chips:['Où placer le reste ?',"Qu'est-ce que le PEA ?"] },
+  { tags:['pea','plan epargne actions'], title:"Qu'est-ce que le PEA ?", reponse:`Le <strong>PEA</strong> :\n• Plafond : <strong>150 000€</strong>\n• Exonération fiscale après <strong>5 ans</strong>\n• ETF MSCI World = diversification mondiale\n• Disponible dans toutes les banques`, chips:["C'est quoi un ETF ?",'PEA vs assurance-vie ?','Comment investir 100€/mois ?'] },
+  { tags:['etf','trackers','fonds indiciels','msci world'], title:"Qu'est-ce qu'un ETF ?", reponse:`Un <strong>ETF</strong> réplique automatiquement un indice boursier.\n\nEx : ETF MSCI World = <strong>1 500+ entreprises mondiales</strong> en 1 transaction.\n\n• Frais ultra-faibles : 0.1-0.3%/an\n• Performance historique : ~7-9%/an sur 30 ans\n• Accessible dès 1€ sur PEA`, chips:["Comment ouvrir un PEA ?",'Risques de la bourse ?'] },
+  { tags:['assurance vie','av','contrat vie'], title:'Assurance-vie : comment ça marche ?', reponse:`<strong>2 types de supports :</strong>\n• <strong>Fonds euros</strong> : capital garanti, ~3-4%/an\n• <strong>Unités de compte</strong> : actions, ETF, SCPI. Plus risqué.\n\n<strong>Avantage fiscal après 8 ans :</strong> abattement 4 600€ (seul) / 9 200€ (couple).`, chips:['PEA vs assurance-vie ?'] },
+  { tags:['pea assurance vie','comparer pea av','choisir placement'], title:'PEA ou Assurance-vie ?', reponse:`<strong>PEA :</strong> ✅ Exonération après 5 ans · ✅ Idéal ETF · ❌ Plafond 150k€\n\n<strong>Assurance-vie :</strong> ✅ Flexible · ✅ Succession · ✅ Fonds euros · ❌ Optimal après 8 ans\n\n<strong>Stratégie :</strong> Livret A → PEA → Assurance-vie`, chips:['Comment investir 100€/mois ?'] },
+  { tags:['investir bourse','commencer investir','100 euros','dca'], title:'Comment investir régulièrement ?', reponse:`Stratégie <strong>DCA</strong> : investir la même somme chaque mois.\n\n• Ouvrir un PEA (Boursorama, Trade Republic)\n• Acheter un ETF MSCI World chaque mois\n• Ne pas regarder tous les jours\n\n100€/mois à 7% pendant 25 ans = <strong>81 000€</strong>`, chips:["Qu'est-ce qu'un ETF ?",'Simuler 100€/mois'], outil:{icon:'📈',name:"Simulateur d'épargne",desc:'Calculez le résultat de vos versements mensuels',url:'epargne.html'} },
+  { tags:['credit immobilier','pret immobilier','emprunt'], title:'Comment fonctionne un crédit immobilier ?', reponse:`Mensualité = <strong>Capital + Intérêts + Assurance</strong>\n\nAu début : surtout des intérêts. Avec le temps : plus de capital.\n\n💡 Négociez toujours <strong>l'assurance emprunteur</strong> — jusqu'à 30% du coût total !`, chips:['Calculer mes mensualités','Quel apport faut-il ?'], outil:{icon:'🏦',name:'Calculateur de crédit',desc:'Simulez vos mensualités en quelques secondes',url:'calculateur.html'} },
+  { tags:['mensualite','calculer mensualite','simulation credit'], title:'Comment calculer ses mensualités ?', reponse:`Notre outil calcule instantanément vos mensualités + tableau d'amortissement complet.`, chips:['Calculer maintenant'], outil:{icon:'🏦',name:'Calculateur de crédit',desc:'Mensualités + tableau complet',url:'calculateur.html'} },
+  { tags:['apport immobilier','apport personnel'], title:'Quel apport faut-il pour acheter ?', reponse:`Les banques demandent <strong>10 à 20%</strong> du prix.\n\n• 10% : couvre les frais de notaire\n• 20% : meilleurs taux et conditions\n\nEx : bien à 250k€ → apport idéal = 50 000€`, chips:['Louer ou acheter ?','Simuler mon crédit'] },
+  { tags:['frais notaire','frais achat'], title:'Combien coûtent les frais de notaire ?', reponse:`• <strong>Ancien</strong> : 7 à 8% du prix\n• <strong>Neuf</strong> : 2 à 3%\n\nEx : 250k€ → frais notaire ~18 750€\n\n⚠️ Non financés par le crédit → prévoyez-les dans l'apport.`, chips:['Quel apport faut-il ?'] },
+  { tags:['taux endettement','capacite emprunt','combien emprunter'], title:'Combien puis-je emprunter ?', reponse:`Règle des banques : <strong>35% max de vos revenus nets</strong>\n\nEx : 3 000€/mois → mensualité max 1 050€ → ~180 000€ à 3.5% sur 20 ans`, chips:['Simuler mon crédit'], outil:{icon:'🏦',name:'Calculateur de crédit',desc:'Simulez votre capacité',url:'calculateur.html'} },
+  { tags:['loyer achat','acheter louer','locataire'], title:'Vaut-il mieux louer ou acheter ?', reponse:`• <strong>&lt;5 ans</strong> : louer (frais notaire non amortis)\n• <strong>5-7 ans</strong> : zone grise\n• <strong>&gt;7 ans</strong> : acheter devient avantageux\n\nNotre simulateur calcule le seuil exact selon votre situation !`, chips:['Calculer mon seuil','Frais de notaire ?'], outil:{icon:'🏠',name:'Simulateur Loyer vs Achat',desc:'Trouvez votre seuil de rentabilité exact',url:'loyer-vs-achat.html'} },
+  { tags:['budget','gerer budget','faire budget'], title:'Comment faire son budget ?', reponse:`Méthode <strong>50/30/20</strong> :\n• 50% besoins (loyer, courses, transport)\n• 30% envies (restaurants, loisirs)\n• 20% épargne & dettes\n\nAstuce : automatisez l'épargne dès réception du salaire.`, chips:['Simuler mon budget','Réduire ses dépenses'], outil:{icon:'💰',name:'Simulateur de budget',desc:'Visualisez votre budget en temps réel',url:'index.html#budget'} },
+  { tags:['reduire depenses','economiser','moins depenser'], title:'Comment réduire ses dépenses ?', reponse:`<strong>5 leviers efficaces :</strong>\n\n1. Abonnements oubliés (Netflix, Spotify...)\n2. Assurances → comparez chaque année\n3. Alimentation → batch cooking\n4. Énergie → changer de fournisseur\n5. Crédits conso → remboursez en priorité`, chips:['Faire un budget','Rembourser ses dettes ?'] },
+  { tags:['dettes','rembourser dettes','sortir dettes','credit conso'], title:'Comment sortir des dettes ?', reponse:`<strong>Méthode Avalanche</strong> : rembourser le taux le plus élevé en premier (moins cher)\n<strong>Méthode Boule de neige</strong> : rembourser le plus petit (plus motivant)\n\n→ Stoppez tout nouvel emprunt immédiatement.`, chips:['Réduire mes dépenses'] },
+  { tags:['retraite','preparer retraite','per'], title:'Comment préparer sa retraite ?', reponse:`<strong>Les outils clés :</strong>\n\n1. <strong>PER</strong> : déduction fiscale immédiate\n2. <strong>Assurance-vie</strong> : flexible + succession\n3. <strong>PEA + ETF</strong> : meilleur rendement long terme\n\n💡 Chaque décennie de retard = versements nécessaires doublés`, chips:['Simuler ma retraite','PEA vs assurance-vie ?'], outil:{icon:'📈',name:"Simulateur d'épargne",desc:'Projetez votre capital retraite',url:'epargne.html'} },
+  { tags:['inflation','pouvoir achat'], title:"Comment l'inflation affecte mon épargne ?", reponse:`À 2%/an :\n• 100 000€ → 82 000€ de pouvoir d'achat dans 10 ans\n• → 67 000€ dans 20 ans\n\nLivret A à 3% + inflation à 3% = <strong>0% réel</strong>.\nPour battre l'inflation : actions, ETF, immobilier.`, chips:['Comment investir ?','PEA : comment ça marche ?'] },
+  { tags:['fiscalite','flat tax','impots investissement'], title:'Quelle fiscalité sur mes placements ?', reponse:`<strong>Flat Tax (PFU) = 30%</strong> sur les gains.\n\nExceptions :\n• Livret A / LDDS : <strong>0%</strong>\n• PEA après 5 ans : <strong>17.2% seulement</strong>\n• Assurance-vie après 8 ans : abattement 4 600€\n• PER : déductible à l'entrée`, chips:['PEA : avantages fiscaux','Assurance-vie ?'] },
+  { tags:['scpi','immobilier papier'], title:"Qu'est-ce qu'une SCPI ?", reponse:`SCPI = immobilier locatif <strong>sans contraintes de gestion</strong>.\n\n• Parts accessibles dès quelques centaines d'euros\n• Rendement moyen : 4-6%/an\n• Inconvénients : frais entrée 8-12%, liquidité limitée`, chips:['Comparer les placements'] },
+  { tags:['diversification','repartir placements'], title:'Pourquoi diversifier ?', reponse:`La diversification réduit le risque sans forcément réduire le rendement.\n\nUn ETF MSCI World = <strong>1 500+ entreprises mondiales</strong> automatiquement diversifiées.`, chips:["ETF : comment ça marche ?"] }
+];
+
+// Articles liés par tag
+const ARTICLES = [
+  { tags:['50','budget','methode'], title:'La règle des 50/30/20', url:'articles/regle-50-30-20.html' },
+  { tags:['pea','assurance vie','comparer'], title:'PEA vs Assurance-vie', url:'articles/pea-vs-assurance-vie.html' },
+  { tags:['100','investir','mensuel','dca'], title:'Investir 100€/mois : les résultats', url:'articles/investir-100-euros-mois.html' },
+  { tags:['erreur','jeune','30 ans'], title:'7 erreurs financières avant 30 ans', url:'articles/erreurs-financieres-30-ans.html' },
+  { tags:['credit','negocier','immobilier'], title:'Négocier son crédit immobilier', url:'articles/negocier-credit-immobilier.html' },
+  { tags:['etf','msci','world','tracker'], title:'ETF MSCI World expliqué', url:'articles/etf-msci-world.html' },
+  { tags:['livret','ldds','lep'], title:'Livret A, LDDS, LEP', url:'articles/livret-a-ldds-lep.html' },
+  { tags:['dette','rembourser','avalanche'], title:'Sortir des dettes', url:'articles/sortir-des-dettes.html' },
+  { tags:['retraite','per','pension'], title:'Préparer sa retraite', url:'articles/preparer-retraite.html' },
+  { tags:['inflation','pouvoir achat'], title:'Inflation : protéger son argent', url:'articles/inflation-proteger-argent.html' },
+  { tags:['freelance','independant','micro'], title:'Finances des freelances', url:'articles/freelance-finances.html' },
+  { tags:['fire','anticipe','liberte'], title:'FIRE : retraite anticipée', url:'articles/fire-retraite-anticipee.html' }
+];
 
 // ═══════════════════════
 // MOTEUR DE RECHERCHE
@@ -425,28 +257,36 @@ const KB = [
 function findBestAnswer(query) {
   const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   let best = null, bestScore = 0;
-
   KB.forEach(entry => {
     let score = 0;
     entry.tags.forEach(tag => {
       const t = tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
       if (q.includes(t)) score += t.length * 2;
-      else {
-        const words = t.split(' ');
-        words.forEach(w => { if (q.includes(w) && w.length > 3) score += w.length; });
-      }
+      else t.split(' ').forEach(w => { if (q.includes(w) && w.length > 3) score += w.length; });
     });
     if (score > bestScore) { bestScore = score; best = entry; }
   });
+  return bestScore >= 4 ? best : null;
+}
 
+function findArticle(query) {
+  const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  let best = null, bestScore = 0;
+  ARTICLES.forEach(a => {
+    let score = 0;
+    a.tags.forEach(tag => {
+      const t = tag.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (q.includes(t)) score += t.length * 2;
+    });
+    if (score > bestScore) { bestScore = score; best = a; }
+  });
   return bestScore >= 4 ? best : null;
 }
 
 // ═══════════════════════
-// INTERFACE CHAT
+// INTERFACE
 // ═══════════════════════
 const messagesEl = document.getElementById('messages');
-let typingTimeout = null;
 
 function scrollBottom() {
   setTimeout(() => messagesEl.scrollTop = messagesEl.scrollHeight, 50);
@@ -455,13 +295,9 @@ function scrollBottom() {
 function addMsg(role, html) {
   const div = document.createElement('div');
   div.className = 'msg ' + role;
-  const avatar = role === 'bot' ? '🤖' : '👤';
-  div.innerHTML = `
-    <div class="msg-avatar">${avatar}</div>
-    <div class="msg-bubble">${html}</div>`;
+  div.innerHTML = `<div class="msg-avatar">${role === 'bot' ? '🤖' : '👤'}</div><div class="msg-bubble">${html}</div>`;
   messagesEl.appendChild(div);
   scrollBottom();
-  return div;
 }
 
 function showTyping() {
@@ -478,121 +314,199 @@ function hideTyping() {
   if (t) t.remove();
 }
 
-function buildResponse(entry) {
+function buildBotResponse(entry) {
   const lines = entry.reponse.split('\n');
-  let html = lines.map(l => l.trim() === '' ? '<br>' : `<p style="margin-bottom:6px">${l}</p>`).join('');
+  let html = lines.map(l => l.trim() === '' ? '' : `<p>${l}</p>`).join('');
 
   if (entry.outil) {
     html += `<a href="${entry.outil.url}" class="tool-link">
       <span class="tool-link-icon">${entry.outil.icon}</span>
-      <div class="tool-link-info">
-        <div class="tl-name">${entry.outil.name}</div>
-        <div class="tl-desc">${entry.outil.desc}</div>
-      </div>
+      <div class="tool-link-info"><div class="tl-name">${entry.outil.name}</div><div class="tl-desc">${entry.outil.desc}</div></div>
       <span class="tool-link-arrow">→</span>
     </a>`;
   }
 
   if (entry.chips && entry.chips.length) {
-    html += `<div class="chips">${entry.chips.map(c =>
-      `<button class="chip" onclick="askTopic('${c}')">${c}</button>`
-    ).join('')}</div>`;
+    html += `<div class="chips">${entry.chips.map(c => `<button class="chip" onclick="askTopic('${c.replace(/'/g, "\\'")}')">${c}</button>`).join('')}</div>`;
   }
   return html;
 }
 
+// ═══════════════════════════════
+// FLOWS CONVERSATIONNELS
+// ═══════════════════════════════
+
+// Gère un flow actif, retourne true si pris en charge
+function handleFlow(query) {
+  // ── FLOW ÉPARGNE ──
+  if (userProfile.objectif === 'epargne') {
+    // Étape 1 : on attend le revenu
+    if (userProfile.step === 'ask_revenu') {
+      const revenu = extractNumber(query);
+      if (revenu && revenu > 200 && revenu < 30000) {
+        userProfile.revenu = revenu;
+        userProfile.step = 'ask_horizon';
+        const min = Math.round(revenu * 0.05);
+        const ideal = Math.round(revenu * 0.15);
+        const max = Math.round(revenu * 0.20);
+        addMsg('bot', `
+          <p>Avec <strong>${revenu.toLocaleString('fr-FR')}€/mois</strong>, voici ce que je recommande :</p>
+          <p>• Minimum : <strong>${min}€/mois</strong> (5%)</p>
+          <p>• Idéal : <strong>${ideal}€/mois</strong> (15%)</p>
+          <p>• Objectif ambitieux : <strong>${max}€/mois</strong> (20%)</p>
+          <p style="margin-top:8px">Sur combien d'années voulez-vous simuler ? (ex: 10, 20, 30 ans)</p>
+        `);
+        return true;
+      } else {
+        addMsg('bot', `<p>Je n'ai pas bien compris. Pouvez-vous entrer votre <strong>salaire net mensuel en euros</strong> ? (ex: 2500)</p>`);
+        return true;
+      }
+    }
+
+    // Étape 2 : on attend l'horizon
+    if (userProfile.step === 'ask_horizon') {
+      const duree = extractNumber(query);
+      if (duree && duree >= 1 && duree <= 40) {
+        const revenu = userProfile.revenu;
+        const versement = Math.round(revenu * 0.15);
+        // Calcul simplifié intérêts composés à 6%
+        const r = 0.06 / 12;
+        const n = duree * 12;
+        const capital = versement * ((Math.pow(1 + r, n) - 1) / r);
+        const totalVerse = versement * n;
+
+        const url = `epargne.html?versement=${versement}&duree=${duree}&taux=6`;
+        addMsg('bot', `
+          <p>En épargnant <strong>${versement.toLocaleString('fr-FR')}€/mois</strong> pendant <strong>${duree} ans</strong> à 6%/an :</p>
+          <p>💰 Capital final estimé : <strong>${Math.round(capital).toLocaleString('fr-FR')}€</strong></p>
+          <p>📥 Vous aurez versé : ${Math.round(totalVerse).toLocaleString('fr-FR')}€</p>
+          <p>📈 Intérêts générés : <strong>${Math.round(capital - totalVerse).toLocaleString('fr-FR')}€</strong></p>
+          <a href="${url}" class="tool-link">
+            <span class="tool-link-icon">📈</span>
+            <div class="tool-link-info">
+              <div class="tl-name">Simulateur d'épargne</div>
+              <div class="tl-desc">Voir la simulation complète avec graphique</div>
+            </div>
+            <span class="tool-link-arrow">→</span>
+          </a>
+          <div class="chips">
+            <button class="chip" onclick="resetAndAsk('Comment investir mon épargne ?')">Où investir ?</button>
+            <button class="chip" onclick="resetAndAsk('Qu\\'est-ce que le PEA ?')">PEA ?</button>
+            <button class="chip" onclick="resetAndAsk('Comment préparer sa retraite ?')">Retraite</button>
+          </div>
+        `);
+        resetFlow(); // Flow terminé, on remet à zéro
+        return true;
+      } else {
+        addMsg('bot', `<p>Entrez un nombre d'années entre 1 et 40 (ex: <strong>20</strong>)</p>`);
+        return true;
+      }
+    }
+  }
+
+  // ── FLOW BUDGET ──
+  if (userProfile.objectif === 'budget' && userProfile.step === 'ask_revenu') {
+    const revenu = extractNumber(query);
+    if (revenu && revenu > 200 && revenu < 30000) {
+      userProfile.revenu = revenu;
+      const besoins = Math.round(revenu * 0.5);
+      const envies = Math.round(revenu * 0.3);
+      const epargne = Math.round(revenu * 0.2);
+      addMsg('bot', `
+        <p>Avec <strong>${revenu.toLocaleString('fr-FR')}€/mois</strong>, la répartition idéale 50/30/20 :</p>
+        <p>🏠 Besoins essentiels : <strong>${besoins.toLocaleString('fr-FR')}€</strong></p>
+        <p>🎉 Envies & loisirs : <strong>${envies.toLocaleString('fr-FR')}€</strong></p>
+        <p>💰 Épargne : <strong>${epargne.toLocaleString('fr-FR')}€</strong></p>
+        <a href="index.html#budget" class="tool-link">
+          <span class="tool-link-icon">💰</span>
+          <div class="tool-link-info"><div class="tl-name">Simulateur de budget</div><div class="tl-desc">Affiner avec vos dépenses réelles</div></div>
+          <span class="tool-link-arrow">→</span>
+        </a>
+        <div class="chips">
+          <button class="chip" onclick="resetAndAsk('Comment réduire mes dépenses ?')">Réduire dépenses</button>
+          <button class="chip" onclick="resetAndAsk('Comment épargner ?')">Épargner plus</button>
+        </div>
+      `);
+      resetFlow();
+      return true;
+    } else {
+      addMsg('bot', `<p>Entrez votre <strong>salaire net mensuel en euros</strong>. (ex: 2000)</p>`);
+      return true;
+    }
+  }
+
+  return false; // Aucun flow actif
+}
+
+// ═══════════════════════
+// RÉPONSE PRINCIPALE
+// ═══════════════════════
 function respond(query) {
   showTyping();
-
-  const delay = 600 + Math.random() * 400;
+  const delay = 500 + Math.random() * 400;
 
   setTimeout(() => {
     hideTyping();
 
+    // 1. Flow conversationnel actif ?
+    if (handleFlow(query)) return;
+
+    // 2. Détecter une nouvelle intention pour démarrer un flow
     const intent = detectIntent(query);
 
-    // =========================
-    // MODE CONVERSATION (NEW)
-    // =========================
-
-    // FLOW ÉPARGNE
-    if (intent === 'epargne' || userProfile.objectif === 'epargne') {
-
-      if (!userProfile.revenu && userProfile.step !== 'ask_revenu') {
-        userProfile.objectif = 'epargne';
-        userProfile.step = 'ask_revenu';
-
-        addMsg('bot', `
-          <p>Bonne idée 💰</p>
-          <p>👉 Tu gagnes combien par mois environ ?</p>
-        `);
-        return;
-      }
-
-      if (userProfile.step === 'ask_revenu') {
-        const revenu = parseInt(query);
-
-        if (!isNaN(revenu)) {
-          userProfile.revenu = revenu;
-          userProfile.step = 'done';
-
-          const min = Math.round(revenu * 0.05);
-          const max = Math.round(revenu * 0.2);
-
-          addMsg('bot', `
-            <p>Parfait 👌</p>
-            <p>Avec ${revenu}€, tu peux viser :</p>
-            <p><strong>${min}€ à ${max}€ / mois</strong></p>
-
-            <a href="epargne.html?revenu=${revenu}">
-              <span class="tool-link-icon">📈</span>
-              <div class="tool-link-info">
-                <div class="tl-name">Simulateur d'épargne</div>
-                <div class="tl-desc">Tester avec ton cas</div>
-              </div>
-              <span class="tool-link-arrow">→</span>
-            </a>
-          `);
-          return;
-        }
-      }
+    if (intent === 'epargne' && !userProfile.revenu) {
+      userProfile.objectif = 'epargne';
+      userProfile.step = 'ask_revenu';
+      addMsg('bot', `<p>Bonne initiative 💰 Je vais vous aider à calculer combien épargner selon votre situation.</p><p>Quel est votre <strong>salaire net mensuel</strong> environ ?</p>`);
+      return;
     }
 
-    // =========================
-    // SINON → TON SYSTÈME ACTUEL
-    // =========================
+    if (intent === 'budget' && !userProfile.revenu) {
+      userProfile.objectif = 'budget';
+      userProfile.step = 'ask_revenu';
+      addMsg('bot', `<p>Je vais vous aider à structurer votre budget 📋</p><p>Quel est votre <strong>revenu net mensuel</strong> ?</p>`);
+      return;
+    }
 
+    // 3. Recherche dans la base de connaissances
     const entry = findBestAnswer(query);
 
     if (entry) {
-      addMsg('bot', buildResponse(entry));
+      addMsg('bot', buildBotResponse(entry));
 
-      // 🔥 AJOUT BLOG ICI
+      // Article lié si disponible
       const article = findArticle(query);
       if (article) {
-        addMsg('bot', `
-          <p>📖 Tu peux aussi lire cet article :</p>
-          <a href="${article.url}" class="tool-link">
-            <span class="tool-link-icon">📘</span>
-            <div class="tool-link-info">
-              <div class="tl-name">${article.title}</div>
-              <div class="tl-desc">Approfondir le sujet</div>
-            </div>
-            <span class="tool-link-arrow">→</span>
-          </a>
-        `);
+        setTimeout(() => {
+          addMsg('bot', `<p>📖 Pour approfondir :</p>
+            <a href="${article.url}" class="tool-link">
+              <span class="tool-link-icon">📘</span>
+              <div class="tool-link-info"><div class="tl-name">${article.title}</div><div class="tl-desc">Lire l'article complet</div></div>
+              <span class="tool-link-arrow">→</span>
+            </a>`);
+        }, 300);
       }
-
     } else {
-      addMsg('bot', `<p>Je peux t’aider sur :</p>
-        <ul>
-          <li>💰 Épargne</li>
-          <li>🏠 Immobilier</li>
-          <li>📊 Budget</li>
-        </ul>`);
+      // Réponse par défaut
+      addMsg('bot', `<p>Je n'ai pas de réponse précise sur ce sujet. Voici ce que je peux faire pour vous :</p>
+        <div class="chips">
+          <button class="chip" onclick="askTopic('Comment épargner ?')">💰 Épargne</button>
+          <button class="chip" onclick="askTopic('Crédit immobilier ?')">🏠 Crédit</button>
+          <button class="chip" onclick="askTopic('Qu\\'est-ce que le PEA ?')">📊 Investissement</button>
+          <button class="chip" onclick="askTopic('Comment faire son budget ?')">📋 Budget</button>
+        </div>
+        <a href="blog.html" class="tool-link">
+          <span class="tool-link-icon">📚</span>
+          <div class="tool-link-info"><div class="tl-name">Blog FinanceIQ</div><div class="tl-desc">15 articles sur tous les sujets finance</div></div>
+          <span class="tool-link-arrow">→</span>
+        </a>`);
     }
-
   }, delay);
+}
+
+function resetAndAsk(q) {
+  resetFlow();
+  askTopic(q);
 }
 
 function sendMessage() {
@@ -623,9 +537,9 @@ function autoResize(el) {
 window.addEventListener('load', () => {
   setTimeout(() => {
     addMsg('bot', `<p>Bonjour ! 👋 Je suis <strong>FinBot</strong>, votre assistant finance personnel.</p>
-      <p style="margin-top:8px">Je peux répondre à vos questions sur :</p>
-      <p>💰 Épargne & budget · 📊 Investissement & PEA · 🏠 Crédit & immobilier · 📈 Retraite & long terme</p>
-      <p style="margin-top:8px">Par quoi voulez-vous commencer ?</p>
+      <p>Je peux répondre à vos questions sur :</p>
+      <p>💰 Épargne & budget · 📊 Investissement & PEA · 🏠 Crédit & immobilier · 📈 Retraite</p>
+      <p>Je peux aussi <strong>calculer personnellement</strong> selon votre revenu. Par quoi on commence ?</p>
       <div class="chips">
         <button class="chip" onclick="askTopic('Comment épargner efficacement chaque mois ?')">💰 Épargner</button>
         <button class="chip" onclick="askTopic('Qu\\'est-ce que le PEA ?')">📊 PEA</button>
