@@ -570,6 +570,28 @@ function drawChart(data) {
 // Init
 update();
 window.addEventListener('resize', update);
+// ajout pour gerer
+  function getParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    revenu: params.get('revenu')
+  };
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const data = getParams();
+
+  if (data.revenu) {
+    const input = document.querySelector('#revenu');
+
+    if (input) {
+      input.value = data.revenu;
+
+      // optionnel : déclencher calcul auto
+      input.dispatchEvent(new Event('input'));
+    }
+  }
+});
 </script>
 </body>
 </html>
