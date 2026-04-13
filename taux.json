@@ -4,21 +4,21 @@
   
   "livrets": {
     "livret_a": {
-      "taux": 2.4,
+      "taux": 1.5,
       "plafond": 22950,
       "label": "Livret A",
       "source": "Banque de France",
       "depuis": "Février 2025"
     },
     "ldds": {
-      "taux": 2.4,
+      "taux": 1.5,
       "plafond": 12000,
       "label": "LDDS",
       "source": "Banque de France",
       "depuis": "Février 2025"
     },
     "lep": {
-      "taux": 3.5,
+      "taux": 2.5,
       "plafond": 10000,
       "label": "LEP",
       "source": "Banque de France",
