@@ -1,0 +1,61 @@
+{
+  "_comment": "Mettre à jour ce fichier quand les taux changent. Vérifier sur banque-france.fr ou service-public.fr",
+  "_last_update": "2026-04-13",
+  
+  "livrets": {
+    "livret_a": {
+      "taux": 2.4,
+      "plafond": 22950,
+      "label": "Livret A",
+      "source": "Banque de France",
+      "depuis": "Février 2025"
+    },
+    "ldds": {
+      "taux": 2.4,
+      "plafond": 12000,
+      "label": "LDDS",
+      "source": "Banque de France",
+      "depuis": "Février 2025"
+    },
+    "lep": {
+      "taux": 3.5,
+      "plafond": 10000,
+      "label": "LEP",
+      "source": "Banque de France",
+      "depuis": "Février 2025"
+    },
+    "pel": {
+      "taux": 2.25,
+      "plafond": 61200,
+      "label": "PEL",
+      "source": "Banque de France",
+      "depuis": "Janvier 2024"
+    },
+    "cel": {
+      "taux": 1.5,
+      "plafond": 15300,
+      "label": "CEL",
+      "source": "Banque de France",
+      "depuis": "Janvier 2024"
+    }
+  },
+
+  "immobilier": {
+    "taux_10ans": { "taux": 3.20, "label": "Crédit sur 10 ans", "tendance": "stable" },
+    "taux_15ans": { "taux": 3.35, "label": "Crédit sur 15 ans", "tendance": "stable" },
+    "taux_20ans": { "taux": 3.50, "label": "Crédit sur 20 ans", "tendance": "baisse" },
+    "taux_25ans": { "taux": 3.65, "label": "Crédit sur 25 ans", "tendance": "baisse" }
+  },
+
+  "inflation": {
+    "taux_annuel": 1.1,
+    "label": "Inflation annuelle (INSEE)",
+    "periode": "Mars 2026",
+    "source": "INSEE"
+  },
+
+  "placements": {
+    "fonds_euros": { "taux_moyen": 3.2, "label": "Fonds euros AV (moyenne)", "annee": "2025" },
+    "scpi": { "taux_moyen": 4.7, "label": "SCPI (rendement moyen)", "annee": "2025" }
+  }
+}
